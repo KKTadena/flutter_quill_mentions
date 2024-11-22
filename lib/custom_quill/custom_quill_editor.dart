@@ -65,7 +65,7 @@ class _CustomQuillEditorState extends State<CustomQuillEditor> {
           padding: const EdgeInsets.all(8),
           maxHeight: 120,
           minHeight: 30,
-          readOnly: false,
+          // readOnly: false,
           showCursor: true,
           customShortcuts: const <ShortcutActivator, Intent>{
             SingleActivator(LogicalKeyboardKey.enter, alt: true):

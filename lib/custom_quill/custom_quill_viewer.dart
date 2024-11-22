@@ -12,23 +12,26 @@ class CustomQuillViewer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return QuillEditor.basic(
-      configurations: QuillEditorConfigurations(
-        controller: controller,
-        onLaunchUrl: (string) async {
-          await launch(context, string);
-        },
-        builder: (context, rawEditor) {
-          return rawEditor;
-        },
-        elementOptions: elementOptions,
-        padding: const EdgeInsets.all(8),
-        maxHeight: 200,
-        minHeight: 30,
-        readOnly: true,
-        showCursor: false,
-        customStyles: defaultStyles,
-        isOnTapOutsideEnabled: true,
+    return IgnorePointer(
+      ignoring: true,
+      child: QuillEditor.basic(
+        configurations: QuillEditorConfigurations(
+          controller: controller,
+          onLaunchUrl: (string) async {
+            await launch(context, string);
+          },
+          builder: (context, rawEditor) {
+            return rawEditor;
+          },
+          elementOptions: elementOptions,
+          padding: const EdgeInsets.all(8),
+          maxHeight: 200,
+          minHeight: 30,
+          // readOnly: true,
+          showCursor: false,
+          customStyles: defaultStyles,
+          isOnTapOutsideEnabled: true,
+        ),
       ),
     );
   }
